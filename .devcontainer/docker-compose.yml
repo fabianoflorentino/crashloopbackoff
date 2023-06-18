@@ -1,0 +1,53 @@
+version: '3.8'
+services:
+  devcontainer:
+    container_name: crashloopbackoff
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - devcontainer
+    volumes:
+      - ../:/workspaces/personal
+    command: sleep infinity
+
+  db:
+    container_name: mariadb
+    image: mariadb:10.6
+    restart: unless-stopped
+    depends_on:
+      - devcontainer
+    networks:
+      - devcontainer
+    volumes:
+      - data:/var/lib/mysql
+    environment:
+      HOSTNAME: mariadb
+      MYSQL_PORT: 3306
+      MYSQL_HOST: mariadb
+      MYSQL_ROOT_PASSWORD: devcontainer
+      MYSQL_DATABASE: crashloopbackoff
+      MYSQL_USER: devcontainer
+      MYSQL_PASSWORD: devcontainer
+    ports:
+      - 3306:3306
+
+  redis:
+    container_name: redis
+    image: redis
+    command: redis-server
+    depends_on:
+      - devcontainer
+    networks:
+      - devcontainer
+    environment:
+      ALLOW_EMPTY_PASSWORD: yes
+    ports:
+      - 6379:6379
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  devcontainer:
