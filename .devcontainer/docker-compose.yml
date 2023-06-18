@@ -21,14 +21,15 @@ services:
       - devcontainer
     volumes:
       - data:/var/lib/mysql
+      - ./mariadb/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       HOSTNAME: mariadb
-      MYSQL_PORT: 3306
       MYSQL_HOST: mariadb
+      MYSQL_PORT: 3306
+      MYSQL_LOCAL_PORT: 3306
       MYSQL_ROOT_PASSWORD: devcontainer
-      MYSQL_DATABASE: crashloopbackoff
-      MYSQL_USER: devcontainer
-      MYSQL_PASSWORD: devcontainer
+      MYSQL_USER: crashloopbackoff
+      MYSQL_PASSWORD: crashloopbackoff
     ports:
       - 3306:3306
 

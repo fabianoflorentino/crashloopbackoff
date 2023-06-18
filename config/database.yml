@@ -12,21 +12,22 @@
 default: &default
   adapter: mysql2
   encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: root
-  password:
-  host: localhost
+  pool: <%= ENV.try(:fetch, 'RAILS_MAX_THREADS') { 4 } %>
+  username: <%= ENV.try(:fetch, 'MYSQL_USER') %>
+  password: <%= ENV.try(:fetch, 'MYSQL_PASSWORD') %>
+  host: <%= ENV.try(:fetch, 'MYSQL_HOST') %>
+  port: <%= ENV.try(:fetch, 'MYSQL_PORT') %>
 
 development:
   <<: *default
-  database: crashloopbackoff_development
+  database: <%= ENV.try(:fetch, 'MYSQL_DATABASE') %>_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: crashloopbackoff_test
+  database: <%= ENV.try(:fetch, 'MYSQL_DATABASE') %>_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
