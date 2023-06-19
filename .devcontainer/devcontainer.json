@@ -10,8 +10,8 @@
     "PATH": "/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/devcontainer/.local/share/gem/ruby/3.2.0/bin",
     "HOSTNAME": "crashloopbackoff",
     "MYSQL_DATABASE": "crashloopbackoff",
-    "MYSQL_USER": "devcontainer",
-    "MYSQL_PASSWORD": "devcontainer",
+    "MYSQL_USER": "crashloopbackoff",
+    "MYSQL_PASSWORD": "crashloopbackoff",
     "MYSQL_HOST": "mariadb",
     "MYSQL_PORT": "3306"
   },
