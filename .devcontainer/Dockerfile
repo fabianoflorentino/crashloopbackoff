@@ -146,8 +146,12 @@ RUN mkdir -p "$GEM_HOME" \
 
 USER devcontainer
 
-RUN gem install --user-install rails bundler \
+RUN gem update --system 3.4.14 \
+  && gem install --user-install rails bundler \
   rubocop rubocop-rails rubocop-minitest \
-  rubocop-packaging rubocop-performance  rubocop-md solargraph
+  rubocop-packaging rubocop-performance  rubocop-md solargraph debug \
+  && git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.12.0 \
+  && echo "source $HOME/.asdf/asdf.sh" >> ~/.bashrc \
+  && echo "source $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc
 
 CMD [ "irb" ]
