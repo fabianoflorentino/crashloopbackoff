@@ -48,6 +48,14 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+gem "rubocop"
+gem "rubocop-rails"
+gem "rubocop-minitest"
+gem "rubocop-packaging"
+gem "rubocop-performance"
+gem "rubocop-md"
+gem "solargraph"
+gem "debug"
 gem "devise"
 
 group :development, :test do
