@@ -1,0 +1,2 @@
+class AdminsBackoffieController < ApplicationController
+end
