@@ -1,0 +1,2 @@
+class ProfilesBackoffieController < ApplicationController
+end
