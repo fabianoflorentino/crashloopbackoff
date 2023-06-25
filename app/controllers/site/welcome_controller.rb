@@ -1,4 +1,3 @@
-class Site::WelcomeController < ApplicationController
-  def index
-  end
+class Site::WelcomeController < SiteController
+  def index; end
 end
