@@ -142,7 +142,7 @@ RUN mkdir -p "$GEM_HOME" \
   && adduser --disabled-password --gecos "" devcontainer \
   && apt-get update \
   && apt-get install -y openssh-client sshpass libpam-runtime libxml2 gnupg git curl \
-    ruby-dev sqlite3 vim make gcc g++ libmariadb-dev-compat libmariadb-dev
+    ruby-dev sqlite3 vim make gcc g++ libmariadb-dev-compat libmariadb-dev npm
 
 USER devcontainer
 
