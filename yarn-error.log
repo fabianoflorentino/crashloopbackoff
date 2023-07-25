@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/local/bin/yarn add jquery 3.6.0
+  /usr/bin/node /home/devcontainer/.yarn/bin/yarn.js add font-aweome
 
 PATH: 
-  /vscode/vscode-server/bin/linux-x64/695af097c7bd098fbf017ce3ac85e09bbc5dda06/bin/remote-cli:/home/devcontainer/.asdf/shims:/home/devcontainer/.asdf/bin:/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/devcontainer/.local/share/gem/ruby/3.2.0/bin
+  /home/devcontainer/.yarn/bin:/home/devcontainer/.config/yarn/global/node_modules/.bin:/vscode/vscode-server/bin/linux-x64/74f6148eb9ea00507ec113ec51c489d6ffb4b771/bin/remote-cli:/home/devcontainer/.asdf/shims:/home/devcontainer/.asdf/bin:/usr/local/bundle/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/devcontainer/.local/share/gem/ruby/3.2.0/bin
 
 Yarn version: 
   1.22.19
@@ -14,13 +14,13 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/3.6.0: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
-      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+  Error: https://registry.yarnpkg.com/font-aweome: Not found
+      at Request.params.callback [as _callback] (/home/devcontainer/.yarn/lib/cli.js:66145:18)
+      at Request.self.callback (/home/devcontainer/.yarn/lib/cli.js:140890:22)
       at Request.emit (events.js:314:20)
-      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.<anonymous> (/home/devcontainer/.yarn/lib/cli.js:141862:10)
       at Request.emit (events.js:314:20)
-      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at IncomingMessage.<anonymous> (/home/devcontainer/.yarn/lib/cli.js:141784:12)
       at Object.onceWrapper (events.js:420:28)
       at IncomingMessage.emit (events.js:326:22)
       at endReadableNT (_stream_readable.js:1241:12)
@@ -29,6 +29,9 @@ Trace:
 npm manifest: 
   {
     "dependencies": {
+      "bootstrap": "4.6.0",
+      "jquery": "3.6.0",
+      "metismenu": "^3.0.7",
       "yarn": "^1.22.19"
     }
   }
@@ -41,7 +44,22 @@ Lockfile:
   # yarn lockfile v1
   
   
+  bootstrap@4.6.0:
+    version "4.6.0"
+    resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.6.0.tgz#97b9f29ac98f98dfa43bf7468262d84392552fd7"
+    integrity sha512-Io55IuQY3kydzHtbGvQya3H+KorS/M9rSNyfCGCg9WZ4pyT/lCxIlpJgG1GXW/PswzC84Tr2fBYi+7+jFVQQBw==
+  
+  jquery@3.6.0:
+    version "3.6.0"
+    resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
+    integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
+  
+  metismenu@^3.0.7:
+    version "3.0.7"
+    resolved "https://registry.yarnpkg.com/metismenu/-/metismenu-3.0.7.tgz#613dd01d14d053474b926a1ecac24d137c934aaa"
+    integrity sha512-omMwIAahlzssjSi3xY9ijkhXI8qEaQTqBdJ9lHmfV5Bld2UkxO2h2M3yWsteAlGJ/nSHi4e69WHDE2r18Ickyw==
+  
   yarn@^1.22.19:
     version "1.22.19"
-    resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.19.tgz#4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
+    resolved "https://registry.npmjs.org/yarn/-/yarn-1.22.19.tgz"
     integrity sha512-/0V5q0WbslqnwP91tirOvldvYISzaqhClxzyUKXYxs07yUILIs5jx/k6CFe8bvKSkds5w+eiOqta39Wk3WxdcQ==
